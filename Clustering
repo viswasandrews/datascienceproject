@@ -1,0 +1,9 @@
+miles_driven = pd.read_csv('datasets/miles-driven.csv', sep='|')
+ar_acc_miles = pd.merge(car_acc, miles_driven, on="state")
+
+car_acc_miles['num_drvr_fatl_col'] = car_acc_miles['drvr_fatl_col_bmiles']*car_acc_miles["million_miles_annually"]/1000
+
+sns.barplot(x=car_acc_miles["cluster"], y=car_acc_miles["num_drvr_fatl_col"], data=car_acc_miles, estimator=sum, ci=None)
+
+count_mean_sum = car_acc_miles.groupby("cluster")["num_drvr_fatl_col"].agg(["count", "mean", "sum"])
+count_mean_sum
