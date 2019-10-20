@@ -1,0 +1,10 @@
+from sklearn import linear_model
+
+features = car_acc[["perc_fatl_speed","perc_fatl_alcohol","perc_fatl_1st_time"]]
+target = car_acc["drvr_fatl_col_bmiles"]
+reg = linear_model.LinearRegression()
+
+reg.fit(features, target)
+
+fit_coef = reg.coef_
+fit_coef
