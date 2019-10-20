@@ -1,0 +1,12 @@
+%this code is for jupyter notebook%
+current_dir = !pwd
+print(current_dir)
+
+file_list = !ls
+print(file_list)
+
+dataset_list = !ls datasets
+print(dataset_list)
+
+accidents_head = !head -n 20 datasets/road-accidents.csv
+accidents_head
