@@ -1,0 +1,17 @@
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+features_scaled = scaler.fit_transform(features)
+
+from sklearn.decomposition import PCA
+pca = PCA()
+
+import matplotlib.pyplot as plt
+plt.bar(range(1, pca.n_components_ + 1),  pca.explained_variance_ratio_)
+plt.xlabel('Principal component #')
+plt.ylabel('Proportion of variance explained')
+plt.xticks([1, 2, 3])
+
+
+two_first_comp_var_exp = pca.explained_variance_ratio_.cumsum()[1]
+print("The cumulative variance of the first two principal components is {}".format(
+    round(two_first_comp_var_exp, 5)))
