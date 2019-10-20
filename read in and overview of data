@@ -1,0 +1,7 @@
+import pandas as pd
+car_acc = pd.read_csv("datasets/road-accidents.csv", comment="#", sep="|")
+print('There are {} rows and {} columns.\n'.format(    rows_and_cols[0], rows_and_cols[1]))
+
+car_acc_information = car_acc.info()
+print(car_acc_information)
+car_acc.tail()
