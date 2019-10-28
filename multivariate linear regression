@@ -8,3 +8,4 @@ reg.fit(features, target)
 
 fit_coef = reg.coef_
 fit_coef
+thsis a first edit 
